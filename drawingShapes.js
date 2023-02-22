@@ -9,7 +9,7 @@ function draw() {
   
   drawTriangle(200, 200, 250, 250, 150, 250);
   drawEllipse(340, 340, 100, 100);
-  drawRectangle(10, 10, 100, 100);
+  drawDiamond(100, 100, 150, 150);
   
 }
 
@@ -21,6 +21,11 @@ function drawEllipse(x, y, width, height){
   ellipse(x, y, width, height);
 }
 
-function drawRectangle(x, y, width, height){
-  rect(x, y, width, height);
+function drawDiamond(x1, y1, x2, y2){
+  beginShape();
+  vertex(x1, y1);
+  vertex(x2, y2);
+  vertex(x1, y1*2);
+  vertex(x2/3, y2);
+  endShape(CLOSE);
 }
