@@ -10,7 +10,7 @@ function draw() {
   
   drawTriangle(200, 200, 250, 250, 150, 250, 0, 100, 50, 1);
   drawEllipse(340, 340, 100, 100, 180, 100, 50);
-  drawRectangle(10, 10, 100, 100, 120, 100, 50);
+  drawRectangle(100, 100, 150, 150, 120, 100, 50);
   
 }
 
@@ -28,9 +28,14 @@ function drawEllipse(x, y, width, height, h, s, l, a){
   pop();
 }
 
-function drawRectangle(x, y, width, height, h, s, l, a){
+function drawRectangle(x1, y1, x2, y2, h, s, l, a){
   push();
   fill(h, s, l, a);
-  rect(x, y, width, height);
+  beginShape();
+  vertex(x1, y1);
+  vertex(x2, y2);
+  vertex(x1, y1*2);
+  vertex(x2/3, y2);
+  endShape(CLOSE);
   pop();
 }
